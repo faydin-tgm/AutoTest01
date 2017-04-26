@@ -7,7 +7,8 @@ import static org.junit.Assert.*;
 import java.awt.Color;
 
 /**
- * Tests mit JUnit
+ * Tests von den Methoden, Konstruktoren und Exceptions der Klasse
+ * Auto mit JUnit
  * Github:
  * git@github.com:faydinTGM/AutoTest01.git
  * 
