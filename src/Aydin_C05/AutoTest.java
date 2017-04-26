@@ -80,10 +80,28 @@ public class AutoTest {
 	}
 	
 	/**
-	 * Test des 1.Konstruktors und der ToString() Methode.
+	 * Test des 2.Konstruktors und der ToString() Methode.
 	 */
 	@Test
 	public void test8(){
+		Auto a = new Auto("Audi", Color.red, 140);
+		Assert.assertEquals("ToString", "Audi, rot, 140PS", a.toString());
+	}
+	
+	/**
+	 * Test des 2.Konstruktors und der ToString() Methode.
+	 */
+	@Test
+	public void test9(){
+		Auto a = new Auto("Audi", Color.black, 140);
+		Assert.assertEquals("ToString", "Audi, schwarz, 140PS", a.toString());
+	}
+	
+	/**
+	 * Test des 1.Konstruktors und der ToString() Methode.
+	 */
+	@Test
+	public void test10(){
 		Auto a = new Auto();
 		Assert.assertEquals("ToString", "Ford, rot, 160PS", a.toString());
 	}	
@@ -92,7 +110,7 @@ public class AutoTest {
 	 * Test der IllegalArgumentException für das Attribut farbe
 	 */
 	@Test (expected=IllegalArgumentException.class)
-	public void test9() {
+	public void test11() {
 		Auto a = new Auto("Audi", null, 140);
 	}
 	
@@ -100,7 +118,7 @@ public class AutoTest {
 	 * Test der IllegalArgumentException für das Attribut type
 	 */
 	@Test (expected=IllegalArgumentException.class)
-	public void test10() {
+	public void test12() {
 		Auto a = new Auto(null, Color.white, 140);
 	}
 	
@@ -108,7 +126,7 @@ public class AutoTest {
 	 * Test der IllegalArgumentException für das Attribut leistung
 	 */
 	@Test (expected=IllegalArgumentException.class)
-	public void test11() {
+	public void test13() {
 		Auto a = new Auto("Audi", Color.white, -140);
 	}
 	
@@ -116,7 +134,7 @@ public class AutoTest {
 	 * Test der IllegalArgumentException für die setFarbe Methode
 	 */
 	@Test (expected=IllegalArgumentException.class)
-	public void test12() {
+	public void test14() {
 		Auto a = new Auto("Audi", Color.white, 140);
 		a.setFarbe(null);
 	}
@@ -125,7 +143,7 @@ public class AutoTest {
 	 * Test der IllegalArgumentException für die setLeistung Methode
 	 */
 	@Test (expected=IllegalArgumentException.class)
-	public void test13() {
+	public void test15() {
 		Auto a = new Auto("Audi", Color.white, 140);
 		a.setLeistung(-190);
 	}
@@ -134,7 +152,7 @@ public class AutoTest {
 	 * Test der IllegalArgumentException für die setType Methode
 	 */
 	@Test (expected=IllegalArgumentException.class)
-	public void test14() {
+	public void test16() {
 		Auto a = new Auto("Audi", Color.white, 140);
 		a.setType(null);
 	}
@@ -143,7 +161,7 @@ public class AutoTest {
 	 * Test der IllegalArgumentException für die setType Methode
 	 */
 	@Test (expected=IllegalArgumentException.class)
-	public void test15() {
+	public void test17() {
 		Auto a = new Auto("Audi", Color.white, 140);
 		a.setType(" ");
 	}
@@ -152,7 +170,7 @@ public class AutoTest {
 	 * Test der IllegalArgumentException für das Attribut type
 	 */
 	@Test (expected=IllegalArgumentException.class)
-	public void test16() {
+	public void test18() {
 		Auto a = new Auto(" ", Color.white, 140);
 	}
 	
@@ -160,7 +178,7 @@ public class AutoTest {
 	 * Test der setType() Methode.
 	 */
 	@Test
-	public void test17(){
+	public void test19(){
 		Auto a = new Auto();
 		a.setType("Audi");
 		Assert.assertEquals("Audi", "Audi", a.getType());
@@ -170,7 +188,7 @@ public class AutoTest {
 	 * Test der setFarbe() Methode.
 	 */
 	@Test
-	public void test18(){
+	public void test20(){
 		Auto a = new Auto();
 		a.setFarbe(Color.blue);
 		Assert.assertEquals("Farbe", Color.blue, a.getFarbe());
@@ -180,7 +198,7 @@ public class AutoTest {
 	 * Test der setLeistung() Methode.
 	 */
 	@Test
-	public void test19(){
+	public void test21(){
 		Auto a = new Auto();
 		a.setLeistung(140);
 		Assert.assertEquals(140, a.getLeistung(), 0);
